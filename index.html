@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Information about Personal Drive Backup, a personal Google Drive archival application.">
+  <title>Personal Drive Backup</title>
+  <style>
+    :root{color-scheme:light;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#18283a;background:#f5f7fa}
+    body{margin:0;line-height:1.7}main{max-width:760px;margin:56px auto;padding:32px;background:white;border:1px solid #dce3eb;border-radius:12px}
+    h1,h2{line-height:1.25}h1{font-size:2.2rem;margin-top:0}h2{margin-top:28px;font-size:1.25rem}a{color:#174eab;text-underline-offset:3px}
+    .label{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:#52647a}.note{padding:16px;background:#eef3fa;border-radius:8px}footer{margin-top:32px;padding-top:20px;border-top:1px solid #dce3eb;font-size:.9rem;color:#52647a}
+    @media(max-width:820px){main{margin:16px;padding:24px}h1{font-size:1.9rem}}
+  </style>
+</head>
+<body>
+<main>
+  <p class="label">Personal archival application</p>
+  <h1>Personal Drive Backup</h1>
+  <p>Personal Drive Backup is a personal application operated by its account owner. It is designed to save backup ZIP archives from a private GitHub Actions workflow into an existing, authorized Google Drive folder.</p>
+  <h2>How the backup works</h2>
+  <p>The workflow packages selected files, checks the destination folder, creates a new backup archive, and downloads that archive again. It compares the downloaded bytes, SHA-256 digest, ZIP inventory and individual file hashes to verify the backup.</p>
+  <p>The archival implementation does not overwrite or delete existing Drive files or change their sharing permissions. A matching existing backup is reused only after verification.</p>
+  <h2>Why Google Drive access is requested</h2>
+  <p>Drive access allows the workflow to read destination-folder and archive metadata, create backup ZIP files in the designated folder, and download those archives for integrity checks. The current integration requests the full Google Drive OAuth scope because it accesses a pre-existing folder without a file-picker authorization flow.</p>
+  <p class="note">The Google permission grant is broader than one folder: it can permit access to all Drive files available to the authorizing account. The application's implemented archival operations are limited to the designated backup destination and matching archives. The scope itself does not enforce that folder boundary.</p>
+  <h2>Personal use and privacy</h2>
+  <p>This application is for its operator's personal backups. This information website does not offer sign-in, request credentials, or publish files or backup contents.</p>
+  <p>Read the <a href="privacy.html">Privacy Policy</a> for details about data access, processing, storage, retention and revoking access.</p>
+  <h2>Support</h2>
+  <p>Use the support email shown for Personal Drive Backup on Google's OAuth consent screen.</p>
+  <footer>Personal Drive Backup &middot; Information updated 7 November 2026 &middot; <a href="privacy.html">Privacy Policy</a></footer>
+</main>
+</body>
+</html>
